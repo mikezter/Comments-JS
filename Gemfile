@@ -1,0 +1,7 @@
+source 'https://rubygems.org'
+gem 'thin'
+gem 'sinatra'
+gem 'sinatra-contrib', require: 'sinatra/reloader'
+gem 'haml'
+gem 'coffee-script'
+gem 'redcarpet'
