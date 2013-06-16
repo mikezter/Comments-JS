@@ -20,7 +20,16 @@
       %p Here are your comments:
 
       %ol
-        %li(ng-repeat="comment in comments") {{comment}}
+        %li(ng-repeat="comment in comments")
+          {{comment.content}}
+          %br
+          %small.muted
+            %i.icon-user
+            {{comment.user}}
+          %small.muted
+            %i.icon-time
+            {{comment.createdAt}}
+
 
       .row-fluid
         %form.form-inline(ng-submit="addComment()")
