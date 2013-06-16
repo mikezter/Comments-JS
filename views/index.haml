@@ -1,16 +1,14 @@
 !!!
-%html(ng-app)
+%html
   %head
     %title Comments
 
     :plain
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-      <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-
-      <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-      <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css" rel="stylesheet">
       <link href="//netdna.bootstrapcdn.com/bootswatch/2.3.2/flatly/bootstrap.min.css" rel="stylesheet">
+
+    :javascript
+      angular.module('Comments', []);
 
     %link{href: '/comments.css', rel: 'stylesheet'}
     %script{src: '/comments.js'}
@@ -19,9 +17,7 @@
     .container.container-fluid(ng-controller="CommentListController")
       %h1 giving you comments
 
-      %p
-        :markdown
-          Here are *your* comments:
+      %p Here are your comments:
 
       %ol
         %li(ng-repeat="comment in comments") {{comment}}
@@ -29,9 +25,9 @@
       .row-fluid
         %form.form-inline(ng-submit="addComment()")
           .span11
-            %textarea.span12(ng-model="newComment" placeholder="Add comment")
+            %textarea.span12(ng-model="newComment" placeholder="type here")
 
           .span1
-            %button.btn.btn-primary{type: 'submit'}
-              %i.icon-comment-alt
+            %button.btn.btn-info{type: 'submit'}
+              %i.icon-comment
 

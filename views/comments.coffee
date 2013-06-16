@@ -1,13 +1,14 @@
-window.CommentListController = ($scope) ->
+angular.module('Comments').controller 'CommentListController',
+  ($scope) ->
 
-  $scope.comments = [
-    'can i haz cheezburgers?',
-    'kkthxbai'
-  ]
+    $scope.comments = [
+      'can i haz cheezburgers?',
+      'kkthxbai'
+    ]
 
-  $scope.newComment = ''
+    $scope.newComment = ''
 
-  $scope.addComment = ->
-    $scope.comments.unshift($scope.newComment)
+    $scope.addComment = ->
+      $scope.comments.unshift($scope.newComment)
 
 
